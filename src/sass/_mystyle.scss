@@ -3,20 +3,22 @@
         background-image: linear-gradient(to top, #2769b1, #09498f);
         .container {
             min-height: 100vh;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: space-between; */
             .menu {
+                min-height: 80px;
+                padding: 15px 0 15px 15px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding-top: 5px;
-                height: 80px;
                 ul {
                     list-style-type: none;
                     margin-bottom: 0;
                     padding-left: 0;
                     li {
-                        display: inline;
-                        padding: 10px;
-                        margin-right: 10px;
+                        display: inline-block;
+                        padding: 15px;
                         a {
                             text-decoration: none;
                             font-family: Poppins;
@@ -28,7 +30,11 @@
                             letter-spacing: normal;
                             text-align: left;
                             color: rgb(255, 255, 255);
+                            min-width: 100%;
                         }
+                    }
+                    li:not(:last-child) {
+                        margin-right: 10px;
                     }
                 }
                 .lang {
@@ -48,8 +54,39 @@
                         color: rgb(255, 255, 255);
                     }
                 }
+                .menu-menu {
+                    position: relative;
+                    background-color: yellowgreen;
+                    .menu-button {
+                        width: 32px;
+                        height: 26px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        div {
+                            width: 32px;
+                            height: 2px;
+                            background-color: white;
+                        }
+                    }
+                    .menu-items {
+                        background-color: rgb(165, 10, 10);
+                        top: -27px;
+                        left: 0;
+                        right: 0;
+                        min-width: 100vw;
+                        min-height: 100vh;
+                        transform: translateX(calc(-100vw + 50%));
+                        ul {
+                            li {
+                                display: block;
+                            }
+                        }
+                    }
+                }
             }
             .row.middle {
+                height: calc(100vh - 80px - 180px);
                 h1 {
                     font-family: Poppins;
                     font-size: 42px;
@@ -72,7 +109,6 @@
                         color: #fff;
                         display: block;
                         padding-left: 26px;
-                        ;
                     }
                 }
                 p {
@@ -85,6 +121,44 @@
                     letter-spacing: normal;
                     text-align: left;
                     color: #fff;
+                }
+            }
+            .fat-boy {
+                div {
+                    position: relative;
+                    min-height: calc(100vh - 80px - 180px);
+                    // border: 1px solid black;
+                    width: 100%;
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        max-width: 100%;
+                        max-height: 100%;
+                        transform: translate(-50%, -50%);
+                        @media (min-width: 1200px) {
+                            max-width: initial;
+                        }
+                    }
+                    img:first-child {
+                        @media (max-width: 768px) {
+                            top: 0;
+                            left: 0%;
+                            transform: translate(0, 0);
+                            max-width: 100%;
+                        }
+                    }
+                    img:last-child {
+                        // transform: translate(-25%, -50%);
+                        @media (max-width: 768px) {
+                            top: 10%;
+                            left: 0%;
+                            transform: translate(0, 0);
+                        }
+                        @media (min-width: 1200px) {
+                            left: 75%;
+                        }
+                    }
                 }
             }
             .row.bottom {
@@ -108,21 +182,6 @@
                             color: #fff;
                         }
                     }
-                }
-            }
-            .fat-boy {
-                img:first-child {
-                    mix-blend-mode: screen;
-                }
-                div {
-                    position: relative;
-                    // background-color: yellowgreen;
-                    min-height: calc(100vh - 80px - 180px);
-                }
-                img {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
                 }
             }
         }
