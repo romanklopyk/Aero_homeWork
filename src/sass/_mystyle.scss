@@ -1,11 +1,9 @@
 .home {
     &__hero {
+        position: relative;
         background-image: linear-gradient(to top, #2769b1, #09498f);
         .container {
             min-height: 100vh;
-            /* display: flex;
-            flex-direction: column;
-            justify-content: space-between; */
             .menu {
                 min-height: 80px;
                 padding: 15px 0 15px 15px;
@@ -55,14 +53,19 @@
                     }
                 }
                 .menu-menu {
-                    position: relative;
-                    //background-color: yellowgreen;
                     .menu-button {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        z-index: 5;
                         width: 32px;
                         height: 26px;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
+                        border-radius: 4px;
+                        //background-color: rgba(255, 255, 255, 0.46);
                         div {
                             width: 32px;
                             height: 2px;
@@ -70,18 +73,22 @@
                         }
                     }
                     .menu-items {
-                        background-color: rgb(165, 10, 10);
-                        top: -27px;
+                        background-image: linear-gradient(to top, #2769b1, #09498f);
+                        top: -500px;
                         left: 0;
                         right: 0;
                         min-width: 100vw;
-                        min-height: 100vh;
-                        transform: translateX(calc(-100vw + 50%));
+                        /* min-height: 100vh; */
+                        z-index: 2;
                         ul {
+                            text-align: center;
                             li {
                                 display: block;
                             }
                         }
+                    }
+                    .opened {
+                        top: 0;
                     }
                 }
             }
@@ -186,4 +193,8 @@
             }
         }
     }
+}
+
+.pad {
+    padding-top: 200px;
 }
